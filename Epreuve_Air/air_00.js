@@ -21,41 +21,47 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 //Créer une boucle en pacourant lettre par lettre 
 //identifier le séparateur dans notre cas ici ("," " espace" " tabulation")
 
-ma_function (string_à_couper, string_séparateur)
-{
-	//syntaxe 
-	//#Algorithme 
-	return (tableau)
-}
-
-
 
 
 // Fonction Utilitaire 
-function split(cutingString, separator) {
-	const separator = [" ",'t', '/n', ]
-	const cutingString = ""
+function splitTable(cutingStrings) {
+	tableResult = []
+	const currentSegment = ""
+	const separator = [" ",'\t', '\n', ]
 	
-	for(let i = 0; i < cutingString.length; i++){
-		if (separator.includes(cutingString[i-1])){
-			cutingString += str[i];
-		} else {
-			if (currentSegment === separator){
-				tableauVide.push(currentSegment);
-			} 
-			currentSegment = "";
-		}
+	for(let i = 0; i < cutingStrings.length; i++){
+		const caractere = cutingStrings[1]
 
+		if (separator.includes(caractere)) {
+			if (currentSegment !== ""){
+				tableResult.push(currentSegment)
+				currentSegment = ""
+			}
+		} else {
+			currentSegment += caractere 
+		}
 	}
 
+	if (currentSegment !== ""){
+		tableResult.push(currentSegment)
+	}
+
+	return tableResult
 }
 
+console.log(splitTable("bonjour les gars"))
+
+console.log(splitTable("bonjour" , "les", "gars"))
 
 // Gestion d'erreur 
 
 
 //Parsing
-
+/* function getArgum$ents() {
+	const arguments = process.argv.slice(2)
+	return arguments
+}
+ */
 //Résolution
 
 //Affichage 
