@@ -26,13 +26,13 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 // Fonction Utilitaire 
 function splitTable(cutingStrings) {
 	tableResult = []
-	const currentSegment = ""
+	let currentSegment = ""
 	const separator = [" ",'\t', '\n', ]
 	
 	for(let i = 0; i < cutingStrings.length; i++){
-		const caractere = cutingStrings[1]
+		const caractere = cutingStrings[i]
 
-		if (separator.includes(caractere)) {
+		if (separator.includes(cutingStrings[i])) {
 			if (currentSegment !== ""){
 				tableResult.push(currentSegment)
 				currentSegment = ""
@@ -49,9 +49,10 @@ function splitTable(cutingStrings) {
 	return tableResult
 }
 
+
 console.log(splitTable("bonjour les gars"))
 
-console.log(splitTable("bonjour" , "les", "gars"))
+// console.log(splitTable("bonjour" , "les", "gars"))
 
 // Gestion d'erreur 
 
