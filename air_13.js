@@ -1,4 +1,4 @@
-
+/* 
 """
 Créez un programme qui trie une liste de nombres. Votre programme devra implémenter l’algorithme du tri rapide (QuickSort).
 
@@ -15,7 +15,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 Wikipedia vous présentera une belle description de cet algorithme de tri.
 
 """
-
+ */
 
 
 

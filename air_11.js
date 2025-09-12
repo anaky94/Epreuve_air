@@ -1,5 +1,5 @@
 
-
+/* 
 """
 
 Créez un programme qui affiche le contenu d’un fichier donné en argument.
@@ -20,3 +20,4 @@ try:
 
 except FileNotFoundError:
     print("erreur fichier introuvable")
+ */

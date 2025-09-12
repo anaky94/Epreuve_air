@@ -1,5 +1,5 @@
 
-"""
+/* """
 Afficher un escalier constitué d’un caractère et d’un nombre d’étages donné en paramètre.
 Exemples d’utilisation :
 $> ruby exo.rb O 5
@@ -17,4 +17,4 @@ print("Afficher un escalier constitué d’un caractère et d’un nombre d’é
 
 
 for i in range(0, 10):
-    print(" " * (10 - i) + "O" * i * 2)
+    print(" " * (10 - i) + "O" * i * 2) */

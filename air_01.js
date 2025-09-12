@@ -7,7 +7,6 @@ ma_fonction(string_à_couper, string_séparateur) { // syntaxe selon votre langa
 	# votre algorithme
 	return (tableau)
 }
-
 Exemples d’utilisation :
 $> python exo.py “Crevette magique dans la mer des étoiles” “la”
 Crevette magique dans 
@@ -15,6 +14,9 @@ Crevette magique dans
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 *
+
+
+
 
 
 // Fonction Utilitaire 
@@ -26,6 +28,10 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 //Parsing
 
+
+
 //Résolution
+
+
 
 //Affichage 

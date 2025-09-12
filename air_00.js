@@ -23,7 +23,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 
-// Fonction Utilitaire 
+//Fonction Utilitaire 
 function splitTable(cutingStrings) {
 	tableResult = []
 	let currentSegment = ""
@@ -35,7 +35,7 @@ function splitTable(cutingStrings) {
 		if (separator.includes(cutingStrings[i])) {
 			if (currentSegment !== ""){
 				tableResult.push(currentSegment)
-				currentSegment = ""
+				currentSegment = [i]
 			}
 		} else {
 			currentSegment += caractere 
@@ -52,17 +52,20 @@ function splitTable(cutingStrings) {
 
 console.log(splitTable("bonjour les gars"))
 
-// console.log(splitTable("bonjour" , "les", "gars"))
 
-// Gestion d'erreur 
+//console.log(splitTable("bonjour" , "les", "gars"))
+
+//Gestion d'erreur 
 
 
 //Parsing
-/* function getArgum$ents() {
+/*function getArgum$ents() {
 	const arguments = process.argv.slice(2)
 	return arguments
 }
- */
+
+*/
+
 //Résolution
 
 //Affichage 
