@@ -29,11 +29,11 @@ function splitTable(cutingStrings) {
 	let currentSegment = ""
 	const separator = [" ",'\t', '\n', ]
 	
-	for(let i = 0; i < cutingStrings.length; i++){
+	for (let i = 0; i < cutingStrings.length; i++) {
 		const caractere = cutingStrings[i]
 
 		if (separator.includes(cutingStrings[i])) {
-			if (currentSegment !== ""){
+			if (currentSegment !== "") {
 				tableResult.push(currentSegment)
 				currentSegment = [i]
 			}
@@ -42,28 +42,27 @@ function splitTable(cutingStrings) {
 		}
 	}
 
-	if (currentSegment !== ""){
+	if (currentSegment !== "") {
 		tableResult.push(currentSegment)
 	}
 
-	return tableResult
+	return tableResult.join("\n")
 }
 
 
-console.log(splitTable("bonjour les gars"))
-
 
 //console.log(splitTable("bonjour" , "les", "gars"))
+
 
 //Gestion d'erreur 
 
 
 //Parsing
+
 /*function getArgum$ents() {
 	const arguments = process.argv.slice(2)
 	return arguments
 }
-
 */
 
 //Résolution
