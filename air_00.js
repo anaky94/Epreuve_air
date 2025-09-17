@@ -23,7 +23,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 
-//Fonction Utilitaire 
+//Fonction Utilitaire
 function splitTable(cutingStrings) {
 	tableResult = []
 	let currentSegment = ""
@@ -51,22 +51,31 @@ function splitTable(cutingStrings) {
 
 
 
-//console.log(splitTable("bonjour" , "les", "gars"))
-
-
 //Gestion d'erreur 
+function isValidArguments(arguments) {
+	if (arguments < 2 ){
+		console.error("Ce script nécéssite minimum deux arguments")
+		return false
+	}
+	return true 
+}
+
 
 
 //Parsing
-
-/*function getArgum$ents() {
+function getArguments() {
 	const arguments = process.argv.slice(2)
 	return arguments
 }
-*/
+
 
 //Résolution
+function getSplitTable() {
+	const arguments = getArguments()
 
+	if ()
+
+}
 //Affichage 
 
 
