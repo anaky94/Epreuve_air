@@ -24,36 +24,36 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 //Fonction Utilitaire
-function splitTable(cutingStrings) {
-	tableResult = []
-	let currentSegment = ""
-	const separator = [" ",'\t', '\n', ]
+function split(array) {
+	array = []
+	let currentString = ""
+	const separator = [" " ,"\t", "\n",]
 	
 	for (let i = 0; i < cutingStrings.length; i++) {
-		const caractere = cutingStrings[i]
+		const char = currentString[i]
 
-		if (separator.includes(cutingStrings[i])) {
-			if (currentSegment !== "") {
-				tableResult.push(currentSegment)
-				currentSegment = [i]
+		if (separator.includes(char)) {
+			if (currentString !== "") {
+				tableResult.push(currentString)
+				currentString = ""
 			}
 		} else {
-			currentSegment += caractere 
+			currentString += char
 		}
 	}
 
-	if (currentSegment !== "") {
-		tableResult.push(currentSegment)
+	if (currentString !== "") {
+		tableResult.push(currentString)
 	}
 
-	return tableResult.join("\n")
+	return tableResult
 }
 
 
 
 //Gestion d'erreur 
-function isValidArguments(arguments) {
-	if (arguments < 2 ){
+function isValidArguments(args) {
+	if (args.length === 0) {
 		console.error("Ce script nécéssite minimum deux arguments")
 		return false
 	}
@@ -61,21 +61,29 @@ function isValidArguments(arguments) {
 }
 
 
-
 //Parsing
 function getArguments() {
-	const arguments = process.argv.slice(2)
-	return arguments
+	const args = process.argv.slice(2)
+	return args
 }
 
 
 //Résolution
-function getSplitTable() {
-	const arguments = getArguments()
-
-	if ()
-
+function displaySplitTable() {
+	//boucle qui di console log l'element 
+	const inputString = getArguments()
+	
+	if (!isValidArguments(process.argv.slice(2))) {
+		return
+	}
+	
+	
+	const resultSplit = splitTable(inputString)
+	console.log(resultSplit)
 }
+
 //Affichage 
+displaySplitTable()
+ 
 
 
