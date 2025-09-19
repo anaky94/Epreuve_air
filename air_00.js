@@ -42,12 +42,13 @@ function splitTable(argument) {
 
 	if ( currentString !== "") {
 	    tableResult.push( currentString)
-	}
-	return tableResult
+
+		return tableResult
     
 }
 
 //Gestion d'erreur 
+<<<<<<< HEAD
 function validAteArgumen(arguments) {
 	if (arguments <= 1){
 		console.error("")
@@ -75,6 +76,21 @@ function displayArray(array) {
 	for (const element of array){
 		console.log(element)
 	}
+=======
+function isValidArguments(args) {
+	if (args.length === 0) {
+		console.error("Ce script nécéssite minimum deux arguments")
+		return false
+	}
+	return true 
+}
+
+
+//Parsing
+function getArguments() {
+	const args = process.argv.slice(2)
+	return args
+}
 
 }
 
