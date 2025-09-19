@@ -24,49 +24,58 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 //Fonction Utilitaire 
-function splitTable(cutingStrings) {
+function splitTable(argument) {
 	tableResult = []
-	let currentSegment = ""
-	const separator = [" ",'\t', '\n', ]
-	
-	for (let i = 0; i < cutingStrings.length; i++) {
-		const caractere = cutingStrings[i]
-
-		if (separator.includes(cutingStrings[i])) {
-			if (currentSegment !== "") {
-				tableResult.push(currentSegment)
-				currentSegment = [i]
+	let currentString = ""
+	const separator = [" ",'\t', '\n']
+	for (let i = 0; i < argument.length; i++) {
+		const char =  argument[i]
+		if (separator.includes(char)) {
+			if (currentString !== "") {
+				tableResult.push( currentString)
+				currentString = ""
 			}
 		} else {
-			currentSegment += caractere 
+			currentString += char 
 		}
 	}
 
-	if (currentSegment !== "") {
-		tableResult.push(currentSegment)
+	if ( currentString !== "") {
+	    tableResult.push( currentString)
 	}
-
-	return tableResult.join("\n")
+	return tableResult
+    
 }
 
-
-
-//console.log(splitTable("bonjour" , "les", "gars"))
-
-
 //Gestion d'erreur 
-
+function validAteArgumen(arguments) {
+	if (arguments <= 1){
+		console.error("")
+	} 
+}
 
 //Parsing
-
-/*function getArgum$ents() {
+function getArguments() {
 	const arguments = process.argv.slice(2)
 	return arguments
 }
-*/
 
 //Résolution
+function getSplitable() {
+	let argument = getArguments()
+	const testarguemnt = argument[0]
+	let result = splitTable(testarguemnt)
+	console.log(result)
+
+}
 
 //Affichage 
+function displayArray(array) {
+	let argument = getSplitable()
+	for (const element of array){
+		console.log(element)
+	}
 
+}
 
+displayArray(result)
