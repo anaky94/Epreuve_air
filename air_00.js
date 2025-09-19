@@ -27,12 +27,11 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 function split(array) {
 	array = []
 	let currentString = ""
-	const separator = [" " ,"\t", "\n",]
+	const separator = [" ","\t", "\n",]
 	
 	for (let i = 0; i < cutingStrings.length; i++) {
 		const char = currentString[i]
-
-		if (separator.includes(char)) {
+		if(separator.includes(char)) {
 			if (currentString !== "") {
 				tableResult.push(currentString)
 				currentString = ""
@@ -46,10 +45,8 @@ function split(array) {
 		tableResult.push(currentString)
 	}
 
-	return tableResult
+	return tableResult.join("\n")
 }
-
-
 
 //Gestion d'erreur 
 function isValidArguments(args) {
@@ -70,16 +67,20 @@ function getArguments() {
 
 //Résolution
 function displaySplitTable() {
-	//boucle qui di console log l'element 
+	//pour Chaque elelment tu m'afiche mon tableau 
 	const inputString = getArguments()
-	
-	if (!isValidArguments(process.argv.slice(2))) {
+
+
+	if (!isValidArguments(args)) {
 		return
 	}
 	
-	
 	const resultSplit = splitTable(inputString)
 	console.log(resultSplit)
+
+	for (const element of array) {
+		
+	}
 }
 
 //Affichage 

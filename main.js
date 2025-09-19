@@ -13,7 +13,7 @@
 	return true
 } */
 
-	function split(array) {
+function split(array) {
 	array = []
 	let currentString = ""
 	const separator = [" " ,"\t", "\n",]
@@ -22,7 +22,7 @@
 		const char = currentString[i]
 		if (separator.includes(char)) {
 			if (currentString !== "") {
-				array.push(currentString)
+				tableResult.push(currentString)
 				currentString = ""
 			}
 		} else {
@@ -31,11 +31,11 @@
 	}
 
 	if (currentString !== "") {
-		array.push(currentString)
+		tableResult.push(currentString)
 	}
 
-	return array 
+	return tableResult
 }
 
-console.log(split("bonjour", "les", "gars"))
-split("bonjour les gens ")
+console.log(split("bonjour les gens", "le","gens"))
+split("bonjour","les", "gens")
