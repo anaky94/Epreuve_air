@@ -24,15 +24,15 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 //Fonction Utilitaire 
-function splitTable(argument) {
-	tableResult = []
+function splitTable(args) {
+	let tableResult = []
 	let currentString = ""
 	const separator = [" ",'\t', '\n']
-	for (let i = 0; i < argument.length; i++) {
-		const char =  argument[i]
+	for (let i = 0; i < args.length; i++) {
+		const char =  args[i]
 		if (separator.includes(char)) {
 			if (currentString !== "") {
-				tableResult.push( currentString)
+				tableResult.push(currentString)
 				currentString = ""
 			}
 		} else {
@@ -41,45 +41,17 @@ function splitTable(argument) {
 	}
 
 	if ( currentString !== "") {
-	    tableResult.push( currentString)
+	    tableResult.push(currentString)
 
-		return tableResult
+	}
+	return tableResult
     
 }
 
 //Gestion d'erreur 
-<<<<<<< HEAD
-function validAteArgumen(arguments) {
-	if (arguments <= 1){
-		console.error("")
-	} 
-}
-
-//Parsing
-function getArguments() {
-	const arguments = process.argv.slice(2)
-	return arguments
-}
-
-//Résolution
-function getSplitable() {
-	let argument = getArguments()
-	const testarguemnt = argument[0]
-	let result = splitTable(testarguemnt)
-	console.log(result)
-
-}
-
-//Affichage 
-function displayArray(array) {
-	let argument = getSplitable()
-	for (const element of array){
-		console.log(element)
-	}
-=======
 function isValidArguments(args) {
-	if (args.length === 0) {
-		console.error("Ce script nécéssite minimum deux arguments")
+	if (args.length <= 0) {
+		console.error("Ce script au minimum UN arguments")
 		return false
 	}
 	return true 
@@ -92,6 +64,26 @@ function getArguments() {
 	return args
 }
 
+//Résolution
+function getSplitable() {
+	let args = getArguments()
+
+	if (!isValidArguments(args)){
+		return
+	}
+	const testArgument = args[0]
+	let result = splitTable(testArgument)
+	return result
+
 }
 
+//Affichage 
+function displayArray(array) {
+	for (const element of array){
+		console.log(element)
+	}
+	return array
+}
+
+let result = getSplitable()
 displayArray(result)
