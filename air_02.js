@@ -18,17 +18,17 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 */
 
 
-/* 
-printer="Crevette magique dans la mer des étoiles" "la"
-mot = "la"
-printer=printer.replace(r"\b({})\b ".format(mot), str(2))
-print(printer)
+
+// printer="Crevette magique dans la mer des étoiles" "la"
+// mot = "la"
+// printer=printer.replace(r"\b({})\b ".format(mot), str(2))
+// print(printer)
 
 chaine = "bonjour le monde"
 mot="le"
 
 mots=chaine.split((" "))
-if len(mots)>=2:
+if (length(mots)>=2)
 	mot=mot.replace(mot, str("lr"))
 return mots 
 
@@ -36,4 +36,4 @@ printer="crevette magique dans la mer des étoiles la "
 mot ="la"
 
 printer = printer.replace(" " + mot +  " "," " )
-print(printer)  */
+print(printer) 
