@@ -25,8 +25,8 @@ function splitTable(args) {
 	let currentString = ""
 	const separator = [" ",'\t', '\n']
 	for (let i = 0; i < args.length; i++) {
-		const char =  args[i]
-		if (separator.includes(char)) {
+		const char =  args[i] // on initialise la chaine de caractère
+		if (separator.includes(char)) { 
 			if (currentString !== "") {
 				tableResult.push(currentString)
 				currentString = ""
@@ -47,7 +47,7 @@ function splitTable(args) {
 //Gestion d'erreur 
 function isValidArguments(args) {
 	if (args.length <= 0) {
-		console.error("Ce script au minimum UN arguments")
+		console.error("Ce script au minimum un arguments")
 		return false
 	}
 	return true 

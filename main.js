@@ -15,3 +15,13 @@
 // EN ENTRe le programme doit comprendre 2 deux arguments 
 // en fonction du séparateur donc (si le séparateur est un espace " ")
 // et en sortis le programme 
+
+
+const str ="bonjour"
+
+const words = str.split(" ")
+
+for (let i =2; i < str.length; i++){
+    const words = str.split("")
+    console.log(words)
+}

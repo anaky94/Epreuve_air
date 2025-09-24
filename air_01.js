@@ -9,7 +9,8 @@ ma_fonction(string_à_couper, string_séparateur) { // syntaxe selon votre langa
 	return (tableau)
 }
 Exemples d’utilisation :
-$> python exo.py “Crevette magique dans la mer des étoiles” “la”
+$> python exo.py “Crevette magique dans la mer des étoiles”// si le mot de l'argument 1 est similaire au mot de l'argument 2 alors ne pas les afficher
+//  “la”
 Crevette magique dans 
  mer des étoiles
 
@@ -30,7 +31,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 //Utilities 
 
 // premiere info c'est transformer une chaine de caractère en tableau
-// EN ENTRe le programme doit comprendre 2 deux arguments 
+// EN entrer le programme doit comprendre deux arguments 
 // en fonction du séparateur donc (si le séparateur est un espace " ")
 // et en sortis le programme 
 
@@ -38,17 +39,29 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 function splitTable(args) {
 	let tableResult = []
 	let currentString = ""
-	const separator = [" ",'\t', '\n']
+	let motReference = args[3]
 	for (let i = 0; i < args.length; i++) {
 		const char =  args[i]
-		if (separator.includes(char)) {
-			if (currentString !== "") {
-				tableResult.push(currentString)
-				currentString = ""
+		///faire la comparaison ici 
+		if (currentString === args[3]) {
+				//comparé currentString avec motReference
+				if (currentString === motReference){
+					split.currentString
+					currentString = ""
+				}
+				//si vrai, ajouter à tableResult
 			}
-		} else {
+				else {
 			currentString += char
 		}
 	}
+	if(currentString === motReference){{
+		tableResult.split(currentString.args[3])
+	}
+
+	}
+	return tableResult
 
 }	
+
+console.log(splitTable("bonjour je suis"))
