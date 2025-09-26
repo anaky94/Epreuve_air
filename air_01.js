@@ -83,12 +83,19 @@ function isValidArguments(args) {
 	}
 }
 //Parsing 
-function getArgumetn(){
+function getArguments(){
 	const args = process.argv.sclice(2)
 	return args 
 }
 
-
 // Resolution
+function getSplitable (){
+	let args = getArguments()
+	if (!isValidArguments(args){
+		return 
+}
+
+const tet
+	
 
 
