@@ -1,18 +1,14 @@
 /* CONTACT  
-Créez un programme qui découpe une chaîne de caractères en tableau en fonction du séparateur donné en 2e argument.
-
-Votre programme devra intégrer une fonction prototypée comme ceci :
-ma_fonction(string_à_couper, string_séparateur)
- { // syntaxe selon votre langage
-
+Créez un programme qui transforme un tableau de chaînes de caractères en une seule chaîne de caractères. Espacés d’un séparateur donné en dernier argument au programme.
+Utilisez une fonction de ce genre (selon votre langage) :
+ma_fonction(array_de_strings, separateur) {
 	# votre algorithme
-
-	return (tableau)
+	return (string)
 }
 Exemples d’utilisation :
-$> python exo.py “Crevette magique dans la mer des étoiles” “la”
-Crevette magique dans 
- mer des étoiles
+$> python exo.py “je” “teste” “des” “trucs” “ “
+Je teste des trucs
+
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 */
