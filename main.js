@@ -1,4 +1,3 @@
-
 // let chaine = "bonhour le monde"
 // let mot = chaine.split(" ")
 // console.log(mot)
@@ -16,12 +15,6 @@
 // en fonction du séparateur donc (si le séparateur est un espace " ")
 // et en sortis le programme 
 
+const str = "Mozilla"
 
-const str ="bonjour"
-
-const words = str.split(" ")
-
-for (let i =2; i < str.length; i++){
-    const words = str.split("")
-    console.log(words)
-}
+console.log(str.substring(0,2))

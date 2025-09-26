@@ -9,8 +9,8 @@ ma_fonction(string_à_couper, string_séparateur) { // syntaxe selon votre langa
 	return (tableau)
 }
 Exemples d’utilisation :
-$> python exo.py “Crevette magique dans la mer des étoiles”// si le mot de l'argument 1 est similaire au mot de l'argument 2 alors ne pas les afficher
-//  “la”
+$> python exo.py “Crevette magique dans la mer des étoiles”
+	“la”
 Crevette magique dans 
  mer des étoiles
 
@@ -35,33 +35,52 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 // en fonction du séparateur donc (si le séparateur est un espace " ")
 // et en sortis le programme 
 
-
-function splitTable(args) {
+//Utilities
+function splitTable(string_à_decouper, string_separateur) {
 	let tableResult = []
-	let currentString = ""
-	let motReference = args[3]
-	for (let i = 0; i < args.length; i++) {
-		const char =  args[i]
-		///faire la comparaison ici 
-		if (currentString === args[3]) {
-				//comparé currentString avec motReference
-				if (currentString === motReference){
-					split.currentString
-					currentString = ""
-				}
-				//si vrai, ajouter à tableResult
+	let morceauActuel = ""
+	const longeurSeparateur = string_separateur.length
+
+	for (let i = 0; i < string_à_decouper.length; i++) {
+		const sousChaine =  string_à_decouper.substring(i,i+ longeurSeparateur)  //retourne la partie d'une chaine comprise entre l'indice de depart et un certain nombre de caractère
+		if (sousChaine === string_separateur) {
+			if (morceauActuel !==""){
+				tableResult.push(morceauActuel) 
 			}
-				else {
-			currentString += char
+			morceauActuel = ""
+			i += longeurSeparateur - 1
+		} else {
+			morceauActuel += string_à_decouper[i]
 		}
 	}
-	if(currentString === motReference){{
-		tableResult.split(currentString.args[3])
+
+	if ( morceauActuel !== ""){
+		tableResult.push(morceauActuel)
 	}
 
-	}
 	return tableResult
 
 }	
 
-console.log(splitTable("bonjour je suis"))
+console.log(splitTable("crevette magique dans la mer des etoiles", "la"))
+//Gestion d'erreur 
+function isValidArguments(args) {
+	if (args.length !== 2 ){
+		console.error("Erreur vous devez saisir deux arguments")
+		return false 
+	}
+	return true
+}
+
+function chekTheValidNumber(args){
+	for (const elements of args){
+		if (!isNaN(Number(elements))){
+			console.error('erreur')
+		}
+	}
+}
+//Parsing 
+
+
+
+
