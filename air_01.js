@@ -94,8 +94,17 @@ function getSplitable (){
 	if (!isValidArguments(args){
 		return 
 }
+const testArgument = args[0]
+let result =  splitTable(testArgument)
+return result
+}
 
-const tet
+function display(array) {
+	for (const element of array){
+		console.log(element)
+	}
+	return array
+}
 	
 
 
