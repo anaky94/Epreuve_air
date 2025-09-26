@@ -72,15 +72,23 @@ function isValidArguments(args) {
 	return true
 }
 
-function chekTheValidNumber(args){
-	for (const elements of args){
-		if (!isNaN(Number(elements))){
-			console.error('erreur')
-		}
+	function rejectNumber(args){
+	  for (const elements of args){
+	    if (!isNaN(Number(elements))){
+	      console.error('erreur')
+	      return false
+	    }
+	  }
+	  return true 
 	}
 }
 //Parsing 
+function getArgumetn(){
+	const args = process.argv.sclice(2)
+	return args 
+}
 
 
+// Resolution
 
 
