@@ -13,8 +13,6 @@ Je teste des trucs
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 */
 
-
-
 // printer="Crevette magique dans la mer des étoiles" "la"
 // mot = "la"
 // printer=printer.replace(r"\b({})\b ".format(mot), str(2))

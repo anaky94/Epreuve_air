@@ -36,33 +36,33 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 // et en sortis le programme 
 
 //Utilities
-function splitTable(string_à_decouper, string_separateur) {
+function splitTable(cuttingString, separatorChain) {
 	let tableResult = []
-	let morceauActuel = ""
-	const longeurSeparateur = string_separateur.length
+	let currentTrack = ""
+	const sizeSeparator = separatorChain.length
 
-	for (let i = 0; i < string_à_decouper.length; i++) {
-		const sousChaine =  string_à_decouper.substring(i,i+ longeurSeparateur)  //retourne la partie d'une chaine comprise entre l'indice de depart et un certain nombre de caractère
-		if (sousChaine === string_separateur) {
-			if (morceauActuel !==""){
-				tableResult.push(morceauActuel) 
+	for (let i = 0; i <cuttingString.length; i++) {
+		const subChain =  cuttingString.substring(i,i+ sizeSeparator )  //retourne la partie d'une chaine comprise entre l'indice de depart et un certain nombre de caractère
+		
+		if (subChain === separatorChain) {
+			if (currentTrack !== "") {
+				tableResult.push(currentTrack) 
 			}
-			morceauActuel = ""
-			i += longeurSeparateur - 1
+			currentTrack = ""
+			i += sizeSeparator - 1
 		} else {
-			morceauActuel += string_à_decouper[i]
+			currentTrack += cuttingString[i]
 		}
 	}
-
-	if ( morceauActuel !== ""){
-		tableResult.push(morceauActuel)
-	}
-
+	
+	if (currentTrack !== "") {  
+		tableResult.push(currentTrack)
 	return tableResult
 
-}	
+	}	
+}
 
-console.log(splitTable("crevette magique dans la mer des etoiles", "la"))
+
 //Gestion d'erreur 
 function isValidArguments(args) {
 	if (args.length !== 2 ){
@@ -72,39 +72,43 @@ function isValidArguments(args) {
 	return true
 }
 
-	function rejectNumber(args){
-	  for (const elements of args){
-	    if (!isNaN(Number(elements))){
+function rejectNumber(args) {
+	for (const elements of args){
+		if (!isNaN(Number(elements))){
 	      console.error('erreur')
 	      return false
 	    }
-	  }
-	  return true 
 	}
+	return true 
 }
+
 //Parsing 
-function getArguments(){
-	const args = process.argv.sclice(2)
+function getArguments() {
+	const args = process.argv.slice(2)
 	return args 
 }
 
-// Resolution
-function getSplitable (){
+//Resolution
+function getSplitable() {
 	let args = getArguments()
-	if (!isValidArguments(args){
-		return 
-}
-const testArgument = args[0]
-let result =  splitTable(testArgument)
-return result
+
+	if (!isValidArguments(args)) return 
+	if (!rejectNumber(args)) return 
+	
+	const testArgument = args[0]
+	const separateur = args[1]
+	let result =  splitTable(testArgument, separateur)
+	return result
 }
 
-function display(array) {
+//Affichage
+function displayArray(array) {
 	for (const element of array){
 		console.log(element)
 	}
 	return array
 }
 	
-
+let result = getSplitable()
+displayArray(result)
 

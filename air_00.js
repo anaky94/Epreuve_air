@@ -53,6 +53,16 @@ function isValidArguments(args) {
 	return true 
 }
 
+function rejectNumber(args) {
+	for (const elements of args){
+		if (!isNaN(Number(elements))){
+	      console.error('erreur')
+	      return false
+	    }
+	}
+	return true 
+}
+
 
 //Parsing
 function getArguments() {
@@ -64,11 +74,12 @@ function getArguments() {
 function getSplitable() {
 	let args = getArguments()
 
-	if (!isValidArguments(args)){
-		return
-	}
+	if (!isValidArguments(args)) return //arret si arguments invalide
+	if (!rejectNumber(args)) return //arret si nombre detecté
+
 	const testArgument = args[0]
-	let result = splitTable(testArgument)
+	const separateur = args[1]
+	let result = splitTable(testArgument,separateur)
 	return result
 
 }
