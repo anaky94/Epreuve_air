@@ -41,7 +41,7 @@ function splitTable(cuttingString, separatorChain) {
 	let currentTrack = ""
 	const sizeSeparator = separatorChain.length
 
-	for (let i = 0; i <cuttingString.length; i++) {
+	for (let i = 0; i < cuttingString.length; i++) {
 		const subChain =  cuttingString.substring(i,i+ sizeSeparator )  //retourne la partie d'une chaine comprise entre l'indice de depart et un certain nombre de caractère
 		
 		if (subChain === separatorChain) {
@@ -57,9 +57,9 @@ function splitTable(cuttingString, separatorChain) {
 	
 	if (currentTrack !== "") {  
 		tableResult.push(currentTrack)
-	return tableResult
-
+		
 	}	
+	return tableResult
 }
 
 
@@ -97,6 +97,7 @@ function getSplitable() {
 	
 	const testArgument = args[0]
 	const separateur = args[1]
+
 	let result =  splitTable(testArgument, separateur)
 	return result
 }
