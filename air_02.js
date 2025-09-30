@@ -8,26 +8,26 @@ ma_fonction(array_de_strings, separateur) {
 Exemples d’utilisation :
 $> python exo.py “je” “teste” “des” “trucs” “ “
 Je teste des trucs
-
-
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 */
 
-// printer="Crevette magique dans la mer des étoiles" "la"
-// mot = "la"
-// printer=printer.replace(r"\b({})\b ".format(mot), str(2))
-// print(printer)
+// convertir un tableau en une seul chaine de caractère [0]
+// espacé d'un séparateur donné en dernier argument donc [1]
 
-chaine = "bonjour le monde"
-mot="le"
+//Utilitises 
+function tableInChaine (cuttingString, separatorChain) {
+	let tableResult = []
+	let currentTrack = ""
+	const sizeSeparator = separatorChain.length	
 
-mots=chaine.split((" "))
-if (length(mots)>=2)
-	mot=mot.replace(mot, str("lr"))
-return mots 
+	for (let i = 0; i < cuttingString.length; i++) {
+		const subChain = cuttingString.substring(i,i + sizeSeparator)
 
-printer="crevette magique dans la mer des étoiles la "
-mot ="la"
 
-printer = printer.replace(" " + mot +  " "," " )
-print(printer) 
+	}
+
+}
+
+
+
+

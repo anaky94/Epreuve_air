@@ -59,7 +59,7 @@ function splitTable(cuttingString, separatorChain) {
 		tableResult.push(currentTrack)
 		
 	}	
-	return tableResult
+	  return tableResult
 }
 
 
