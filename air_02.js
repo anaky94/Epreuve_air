@@ -15,19 +15,14 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 // espacé d'un séparateur donné en dernier argument donc [1]
 
 //Utilitises 
-function tableInChaine (cuttingString, separatorChain) {
-	let tableResult = []
+function transformArrayInstring (strings, separatorStrings) {
+	let string = []
 	let currentTrack = ""
-	const sizeSeparator = separatorChain.length	
-
-	for (let i = 0; i < cuttingString.length; i++) {
-		const subChain = cuttingString.substring(i,i + sizeSeparator)
-
-
+	for (string in strings){
+		currentTrack += string + separatorStrings.pop()
+		return currentTrack
 	}
-
+	
 }
 
-
-
-
+console.log(transformArrayInstring("je" ,"teste", "des" ,"rucs", ""))

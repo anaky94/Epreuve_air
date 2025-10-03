@@ -57,7 +57,6 @@ function splitTable(cuttingString, separatorChain) {
 	
 	if (currentTrack !== "") {  
 		tableResult.push(currentTrack)
-		
 	}	
 	  return tableResult
 }
