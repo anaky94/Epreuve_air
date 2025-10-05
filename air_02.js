@@ -15,7 +15,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 // espacé d'un séparateur donné en dernier argument donc [1]
 
 //Utilitises 
-function transformArrayInstring (strings, separatorStrings) {
+/* function transformArrayInstring (strings, separatorStrings) {
 	let string = []
 	let currentTrack = ""
 	for (string in strings){
@@ -26,3 +26,18 @@ function transformArrayInstring (strings, separatorStrings) {
 }
 
 console.log(transformArrayInstring("je" ,"teste", "des" ,"rucs", ""))
+ */
+
+function transformArrayInstring (strings, 	separatorStrings){
+	
+	let currentTrack = ""
+	for( let i = 0; i < strings.length; i++){
+		currentTrack += strings + separatorStrings
+
+	}
+
+	return currentTrack
+
+}
+
+console.log(transformArrayInstring(['fire', 'air', 'water'], ""))
