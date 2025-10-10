@@ -12,32 +12,21 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 */
 
 // convertir un tableau en une seul chaine de caractère [0]
-// espacé d'un séparateur donné en dernier argument donc [1]
+// Espace d'un séparateur donné en dernier argument donc [1]
 
 //Utilitises 
-/* function transformArrayInstring (strings, separatorStrings) {
-	let string = []
+function transformArrayInstring (strings, separatorStrings) {
 	let currentTrack = ""
-	for (string in strings){
-		currentTrack += string + separatorStrings.pop()
-		return currentTrack
-	}
-	
-}
 
-console.log(transformArrayInstring("je" ,"teste", "des" ,"rucs", ""))
- */
-
-function transformArrayInstring (strings, 	separatorStrings){
-	
-	let currentTrack = ""
-	for( let i = 0; i < strings.length; i++){
-		currentTrack += strings + separatorStrings
-
+	for (let i=0; i < strings.length; i++){
+		currentTrack += strings[i] 
+		if (i < strings.length-1) {
+			currentTrack += separatorStrings
+		}  
 	}
 
 	return currentTrack
-
 }
 
-console.log(transformArrayInstring(['fire', 'air', 'water'], ""))
+console.log(transformArrayInstring(["je" ,"teste", "des" ,"rucs"], ""))
+ 
