@@ -28,5 +28,40 @@ function transformArrayInstring (strings, separatorStrings) {
 	return currentTrack
 }
 
-console.log(transformArrayInstring(["je" ,"teste", "des" ,"rucs"], ""))
+//Parsing 
+function getArguments() {
+	const args = process.argv.slice(2)
+	return args 
+}
  
+//Gestion d'erreur
+function isValidArguments(args) {
+	if (args.length !==2) {
+		console.error("Erreur vous devez saisir au moins trois arguments")
+		return false
+	}
+	return true
+}
+
+function rejectNumber(args) {
+	for (const elements of args){
+		if (!isNaN(Number(elements))){
+	      console.error('erreur')
+	      return false
+	    }
+	}
+	return true 
+}
+
+//Resolution 
+function getTransformArrayInstring (){
+	let args = getArguments()
+
+	const stirngs = args[0]
+	const eparatorStrings= args[1]
+
+	le result = splitTable()
+}
+
+let result = getTransformArrayInstring()
+display(result)

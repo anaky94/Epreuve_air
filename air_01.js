@@ -64,8 +64,8 @@ function splitTable(cuttingString, separatorChain) {
 
 //Gestion d'erreur 
 function isValidArguments(args) {
-	if (args.length !== 2 ){
-		console.error("Erreur vous devez saisir deux arguments")
+	if (args.length !== 3 ){
+		console.error("Erreur vous devez saisir au moins trois arguments")
 		return false 
 	}
 	return true
