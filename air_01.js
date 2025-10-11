@@ -32,8 +32,8 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 // premiere info c'est transformer une chaine de caractère en tableau
 // EN entrer le programme doit comprendre deux arguments 
-// en fonction du séparateur donc (si le séparateur est un espace " ")
-// et en sortis le programme 
+// En fonction du séparateur donc (Si le séparateur est un espace " ")
+// Et en sortis le programme 
 
 //Utilities
 function splitTable(cuttingString, separatorChain) {
@@ -42,10 +42,10 @@ function splitTable(cuttingString, separatorChain) {
 	const sizeSeparator = separatorChain.length
 
 	for (let i = 0; i < cuttingString.length; i++) {
-		const subChain =  cuttingString.substring(i,i+ sizeSeparator )  //retourne la partie d'une chaine comprise entre l'indice de depart et un certain nombre de caractère
+		const subChain =  cuttingString.substring(i,i+ sizeSeparator)  //retourne la partie d'une chaine comprise entre l'indice de depart et un certain nombre de caractère
 		
 		if (subChain === separatorChain) {
-			if (currentTrack !== "") {
+			if (currentTrack !== " ") {
 				tableResult.push(currentTrack) 
 			}
 			currentTrack = ""
@@ -110,5 +110,6 @@ function displayArray(array) {
 }
 	
 let result = getSplitable()
+console.log("Tableau complet", result)
 displayArray(result)
 
