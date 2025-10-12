@@ -53,25 +53,19 @@ function rejectNumber(args) {
 //Resolution 
 function getTransformArrayInstring() {
 	let args = getArguments()
-	// console.log("1 - args recus",args, "longeur",args.lenght)
 
 	if (!isValidArguments(args) || !rejectNumber(args)){
-		// console.log("2 - bloqué par isValid")
 		return 
 	}
 
-	// console.log("3 - isvalid passé")
 
 
 	const strings = args.slice(0, -1)
-		// console.log("5 - rejectNumber")
 	
 
 	const separatorStrings = args [args.length - 1]
-	// console.log("6 ",strings, "sparator : ", separatorStrings)
 
 	let result = transformArrayInstring(strings, separatorStrings)
-	// console.log("result",result)
 	return result
 }
 
