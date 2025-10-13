@@ -9,13 +9,31 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
  */
 
 
-function searchTruder() {
-    let tableSearch = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+function searchTruder(nombres) {
+    
+    let compteur = {} 
 
-    for (let i = 0; i < tableSearch.length; i++ ) {
-        //si le premier element trouve sont pair dans le tableau alors return true si il ne trouve pas sont paire alors l'afficher  
-
-
+    for (let i = 0; i < nombres.length; i++ ) {
+        let nombreActuel = nombres[i]
+        
+        if (compteur [nombreActuel]){
+            compteur [nombreActuel] += 1
+            
+        }
+        else {
+            compteur[nombreActuel] = 1
+        }
     }
+    console.log(compteur)
 
+    for( let nombre in compteur) {
+        if (compteur[nombre]===1){
+            return Number[nombre]
+        }
+    }
+    return null
 }
+
+console.log(searchTruder([1, 2, 3, 4, 5, 4, 3, 2, 1]))
+
+
