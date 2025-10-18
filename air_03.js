@@ -15,33 +15,38 @@ function searchTruder(nombres) {
     console.log("1. Nombres reçus", nombres)
     
     let compteur = {} 
-    console.log("2. compteur initial:", compteur)
     
-    for (let i = 0; i < nombres.length; i++ ) {
+    for (let i = 0; i < nombres.length; i++) {
         let nombreActuel = nombres[i]
-        console.log(`3.Element ${i}:,`,nombreActuel)
+
 
         if (compteur [nombreActuel]){
             compteur [nombreActuel] += 1
-            
+            console.log(`4. Element ${i};`, nombreActuel)
         }
         else {
             compteur[nombreActuel] = 1
+            console.log(`5. initialisé ${compteur[nombreActuel]}; `,compteur )
         }
     }
-    console.log(compteur)
+    console.log(`6.compteur final;`, compteur)
     for (let nombre in compteur) {
-        console.log(`nombre: ${nombre}, typr: ${typeof nombre}, valeur: ${compteur[nombre]}`)
+        console.log(`7. Vérification: ${nombre}, = : ${compteur[nombre]}`)
         if (compteur[nombre] === 1) {
-            console.log("Trouvé! ", nombre)
-            return Number[nombre]
+            console.log(" 8. Trouvé! ", nombre)
+            let result = Number(nombre)
+            console.log("9. Apreès conversion", result)
+
+            return result
         }
     }
+    console.log("10. Rien Trouvé")
     return null
 }
-
+console.log("===Debut===")
 let resultat = searchTruder([1, 2, 3, 4, 5, 4, 3, 2, 1])
-console.log("resultat: ", resultat)
+console.log("===Fin===")
+console.log("resultat final: ", resultat, "type", typeof resultat )
 
 /* 
 //Parsing 
