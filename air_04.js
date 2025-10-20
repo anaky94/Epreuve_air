@@ -1,16 +1,18 @@
-/* 
-"""Créez un programme qui retourne la valeur d’une liste qui n’a pas de paire.
+/* import re
+"""
+Un seul à la fois
+    Créez un programme qui affiche une chaîne de caractères en évitant les caractères identiques adjacents.
 
 Exemples d’utilisation :
-$> python exo.py 1 2 3 4 5 4 3 2 1
-5
-$> python exo.py bonjour monsieur bonjour
-monsieur
+$> python exo.py “Hello milady,   bien ou quoi ??”
+Helo milady, bien ou quoi ?
 Afficher error et quitter le programme en cas de problèmes d’arguments.
-""" */
+"""
+ */
 
-
-
+//Utilitises 
+//le programme doit affiché une chaine de caractères en évitant les caractères identique
+// je doit faire une fonction qui affiche 
 
 
 
