@@ -10,8 +10,6 @@ Helo milady, bien ou quoi ?
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 
-"""
-
  */
 
 

@@ -31,9 +31,6 @@ function searchTruder(elements) {
     }
     return null
 }
-
-
-
 //Parsing 
 function getArguments() {
     const args = process.argv.slice(2)
@@ -48,7 +45,6 @@ function isValidArguments(args) {
     }
     return true
 }
-
 //Resolution 
 function getSearchTruder() {
     let args = getArguments()
