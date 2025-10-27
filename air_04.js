@@ -30,16 +30,17 @@ function stringsCarac (storStrings) {
     if ( storStrings.length === 0 ){
         return 
     }
-    const resultat = ""
-    for (let i = 1; i < storStrings.length; -1){
-        if (resultat[i] != storStrings[i-1])
-            storStrings += resultat[i]
+    let resultat = storStrings[0]
+    for (let i = 1; i < storStrings.length; i++){
+        if (storStrings[i] != resultat[resultat.length]){
+            resultat  += storStrings[i]
+        }
     }
     
     return resultat 
 }
 
-console.log(stringsCarac("bbjnour, bien ou quoi ?"))
+console.log(stringsCarac("bjjnour, bien ou quoi ?"))
 
 
 
