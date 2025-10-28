@@ -28,19 +28,34 @@ FONCTION suprimerDoublonAdjacent(text):
 
 function stringsCarac (storStrings) {
     if ( storStrings.length === 0 ){
-        return 
+        return ""
     }
     let resultat = storStrings[0]
+    
     for (let i = 1; i < storStrings.length; i++){
-        if (storStrings[i] != resultat[resultat.length]){
+        if (storStrings[i] != resultat[resultat.length-1] ){
             resultat  += storStrings[i]
         }
     }
-    
+
     return resultat 
 }
 
 console.log(stringsCarac("bjjnour, bien ou quoi ?"))
 
+//Parsing 
+function getArguments(){
+    const args = process.argv.slice(2)
+    return args
+}
 
+// Gestion d'ereur 
+function isValisArguments(args){
+    if ( args.length != 1){
+        console.error("Erreur")
+        return false 
+    }
 
+    return true 
+
+}
