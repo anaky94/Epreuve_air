@@ -26,7 +26,7 @@ FONCTION suprimerDoublonAdjacent(text):
     retiourner resultat  
     */
 
-function stringsCarac (storStrings) {
+function removeAdjacentDuplicate (storStrings) {
     if ( storStrings.length === 0 ){
         return ""
     }
@@ -41,7 +41,6 @@ function stringsCarac (storStrings) {
     return resultat 
 }
 
-console.log(stringsCarac("bjjnour, bien ou quoi ?"))
 
 //Parsing 
 function getArguments(){
@@ -55,7 +54,24 @@ function isValisArguments(args){
         console.error("Erreur")
         return false 
     }
-
     return true 
-
 }
+
+//Resomution 
+function getRemoveAdjacentDuplicate () {
+    let args = getArguments()
+
+    if (!isValisArguments(args)){
+        return
+    }
+    let result = removeAdjacentDuplicate (args)
+    return result
+}
+
+// Affichage 
+function display() {
+    let result = getRemoveAdjacentDuplicate()
+    console.log(result)
+}
+
+display()
