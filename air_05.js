@@ -18,17 +18,15 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 //lobjecif est de fair une opération mathématique avec chaque entité d'une liste 
 //L'operation ce trouve dans le dernier élement en chaine de caractère 
 
-/* Pseudo code
-    
- */
 
 function displayOfStrings() {
     let tableResult = []
-    let list  = [10,11,12,20]
-    let numbercalculator = [+2]
+    let list  = []
+    let numbercalculator = ""
 
     for(element of list){
-        console.log(element + numbercalculator[0])
+        let calcul = element + numbercalculator[0]
+        tableResult.push(calcul)
     }
     return tableResult
 }
@@ -43,25 +41,51 @@ function getArguments() {
 
 //gestion d'erreur 
 function isValidArguments(args) {
-    if (args.length =! 2 ) {
+    if (args.length < 2 ) {
         console.error("Erreur")
         return false
     }
     return true
 }
 
-//Resilution 
-function getDisplayOfStrings (){
-    let args = getArguments()
-
-    if(!isValidArguments(args)) return
-    
-
-    const list = args[0]
-    const numbercalculator= args[1]
+function checkTheValidNumber(args) {
+    for(const arg of args){
+        if (arg.trim() === ""|| (isNaN(Number(arg)))){
+            console.error(`Erreur : ce n'est pas un nombre valide`);
+            console.info("Exemple : node script.js 4 6 12 ");
+            return true
+        }
+    } return false
 }
 
+//Resolution 
+function getDisplayOfStrings (list, numberToAdd){
+    let args = getArguments()
+    
+    if(!isValidArguments(args)) return
+    if (checkTheValidNumber(args)) return
+    
+    const list = args.slice(0,-1).map(Number)
+    const numberToAdd = Number(args[args.length-1])
 
+    let tableResult = []
+    for (element of list){
+        tableResult.push(element +numberToAdd)
+
+    }
+
+    return tableResult
+   
+}
+
+//Affichage
+function display() {
+    let result = getDisplayOfStrings()
+    console.log(result)
+    
+}
+
+display()
 
 
 
