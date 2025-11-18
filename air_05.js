@@ -21,7 +21,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 function displayOfStrings() {
     let tableResult = []
-    let list  = []
+    let list = []
     let numbercalculator = ""
 
     for(element of list){
@@ -41,16 +41,24 @@ function getArguments() {
 
 //gestion d'erreur 
 function isValidArguments(args) {
-    if (args.length < 2 ) {
+    if (args.length < 3 ) {
         console.error("Erreur")
         return false
     }
-    return true
+    //verifie que le dernier argument est + ou -
+    const lastArg = args [args.length -1]
+    if (lastArg !== "+" && lastArg !== "-") {
+        console.log("Erreur")
+        return false
+    }
+
+    return true 
+
 }
 
 function checkTheValidNumber(args) {
     for(const arg of args){
-        if (arg.trim() === ""|| (isNaN(Number(arg)))){
+        if (arg.trim() === "" || (isNaN(Number(arg)))){
             console.error(`Erreur : ce n'est pas un nombre valide`);
             console.info("Exemple : node script.js 4 6 12 ");
             return true
@@ -59,24 +67,30 @@ function checkTheValidNumber(args) {
 }
 
 //Resolution 
-function getDisplayOfStrings (list, numberToAdd){
+function getDisplayOfStrings() {
     let args = getArguments()
     
     if(!isValidArguments(args)) return
     if (checkTheValidNumber(args)) return
+
+    const operation = args [args.length - 1]
+
+    const number = Number(args[args.length - 2])
+
+    const list = args.slice(0, 2).map(Number)
     
-    const list = args.slice(0,-1).map(Number)
-    const numberToAdd = Number(args[args.length-1])
+    
 
     let tableResult = []
     for (element of list){
-        tableResult.push(element +numberToAdd)
-
+        if (operation === "+"){
+            tableResult.push (element +number)
+        } else if  (operation === "-") {
+            tableResult.push(element-number)
+            }
+        }
     }
-
     return tableResult
-   
-}
 
 //Affichage
 function display() {
