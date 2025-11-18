@@ -57,14 +57,16 @@ function isValidArguments(args) {
 }
 
 function checkTheValidNumber(args) {
-    for(const arg of args){
+    for(let i=0; i < args.length - 1; i++ ){
+        const arg = args[i]
         if (arg.trim() === "" || (isNaN(Number(arg)))){
             console.error(`Erreur : ce n'est pas un nombre valide`);
             console.info("Exemple : node script.js 4 6 12 ");
             return true
         }
-    } return false
-}
+    }
+    return false
+} 
 
 //Resolution 
 function getDisplayOfStrings() {
@@ -75,11 +77,11 @@ function getDisplayOfStrings() {
 
     const operation = args [args.length - 1]
 
-    const number = Number(args[args.length - 2])
+    const numberWithSign = args[args.length - 2]
 
-    const list = args.slice(0, 2).map(Number)
-    
-    
+    const number = Number(numberWithSign)
+
+    const list = args.slice(0, -1).map(Number)
 
     let tableResult = []
     for (element of list){
@@ -88,10 +90,10 @@ function getDisplayOfStrings() {
         } else if  (operation === "-") {
             tableResult.push(element-number)
             }
-        }
     }
+    
     return tableResult
-
+}
 //Affichage
 function display() {
     let result = getDisplayOfStrings()

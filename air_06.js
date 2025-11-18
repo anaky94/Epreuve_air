@@ -1,21 +1,25 @@
 
-/* """ Créez un programme qui est capable de reconnaître et de faire une opération (addition ou soustraction) sur chaque entier d’une liste.
+/* """ Créez un programme qui supprime d’un tableau tous les éléments qui ne contiennent pas une autre chaîne de caractères.
+
+Utilisez une fonction de ce genre (selon votre langage) :
+ma_fonction(array_de_strings, string) {
+	# votre algorithme
+	return (nouvel_array_de_strings)
+}
+
 Exemples d’utilisation :
-$> ruby exo.rb 1 2 3 4 5 “+2”
-3 4 5 6 7
+$> python exo.py “Michel” “Albert” “Thérèse” “Benoit” “t”
+Michel
 
-$> ruby exo.rb 10 11 12 20 “-5”
-5 6 7 15
-
-
-L’opération à appliquer sera toujours le dernier élément.
-
+$> python exo.py “Michel” “Albert” “Thérèse” “Benoit” “a”
+Michel, Thérèse, Benoit
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
+ */
 
-""" */
-
-        
+/* Fonction filtrerTableau(tableau, chaineRechercher) 
+        creer 
+        */        
 
 
 
