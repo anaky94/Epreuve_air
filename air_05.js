@@ -39,7 +39,7 @@ function getArguments() {
     return args
 }
 
-//gestion d'erreur 
+//Gestion d'erreur 
 function isValidArguments(args) {
     if (args.length < 3 ) {
         console.error("Erreur")

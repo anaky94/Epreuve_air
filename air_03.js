@@ -15,7 +15,7 @@ function searchTruder(elements) {
     let compteur = {} 
     
     for (let i = 0; i < elements.length; i++) {
-        let elementsActuel = elements[i]
+        let elementsActuel = elements[i] 
         if (compteur [elementsActuel]){
             compteur [elementsActuel] += 1
         }
