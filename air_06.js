@@ -30,7 +30,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 function filterTable( table,  stringResearch){
     let newArrayOfStrings = []
 
-    for (let i =0; i < table.length; i++){
+    for (let i = 0; i < table.length; i++){
         let element = table[i]
         if (element.toLowerCase().includes(stringResearch.toLowerCase())){
             newArrayOfStrings.push(element)
@@ -40,7 +40,6 @@ function filterTable( table,  stringResearch){
 }
 
 
-console.log(filterTable(["michel","mimi", "yael", "aya"],"a"))
 //parsing
 function getArguments() {
     const args = process.argv.slice(2)
@@ -49,23 +48,42 @@ function getArguments() {
 
 //Gestion d'erreur 
 function isValidArguments(args) {
-    if (args.length < 3)
+    if (args.length < 2){
         console.error("Erreur")
     return false
+
+    }
+    return true
 }
 
 function rejectNumber(args) {
 	for (const elements of args){
 		if (!isNaN(Number(elements))){
-	      console.error('Erreur')
-	      return false
+	      console.error("Erreur: pas de dnombre autorisés")
+	      return true
 	    }
 	}
-	return true 
+	return false 
 }
 
+//Resolution 
+function getFilterTable() {
+    let args = getArguments()
 
+    if (!isValidArguments(args)) return 
+    if (rejectNumber(args)) return
 
+    const table = args.slice (0, -1)
+
+    const stringResearch = args[args.length -1]
+
+    let result = filterTable (table, stringResearch)
+    return result
+
+}
+
+//Affiche 
+console.log(getFilterTable())
 
 
 

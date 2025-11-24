@@ -47,6 +47,7 @@ function isValidArguments(args) {
     }
     //verifie que le dernier argument est + ou -
     const lastArg = args [args.length -1]
+    
     if (lastArg !== "+" && lastArg !== "-") {
         console.log("Erreur")
         return false
