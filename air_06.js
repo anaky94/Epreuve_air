@@ -16,25 +16,18 @@ Michel, Thérèse, Benoit
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
  */
-
-/* Fonction filtrerTableau(tableau, chaineRechercher) 
-        creer nouveau tableau vide 
-
-        pour chaque element Dans tableau 
-            si element Contien chaineRecherche:
-                Ajouter element A nouveauTableau 
-        
-                retourner Nouveau tableau 
-        */        
+     
 
 function filterTable( table,  stringResearch){
     let newArrayOfStrings = []
 
     for (let i = 0; i < table.length; i++){
         let element = table[i]
-        if (element.toLowerCase().includes(stringResearch.toLowerCase())){
-            newArrayOfStrings.push(element)
-        }
+        if (!element.toLowerCase().includes(stringResearch.toLowerCase())){
+        
+                newArrayOfStrings.push(element)
+            
+        }  
     }
     return newArrayOfStrings
 }
@@ -83,10 +76,12 @@ function getFilterTable() {
 }
 
 //Affiche 
-console.log(getFilterTable())
+function display(){
+    let result = getFilterTable()
+    console.log(result)
+}
 
-
-
+display()
 
 
 

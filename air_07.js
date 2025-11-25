@@ -28,27 +28,10 @@ for element in var:
         tranche_pas = element.find(chaine)
         if tranche_pas != -1:
             delete = var.remove("toto")
-            print(var)
-            
-       
+            print(var
 
 
 """
-for i in var:
-    
-    print(var.find(chaine))
-    print(var[i])
-"""
-"""if var [i] == chaine:
-        del var[i]
-    else:
-        print(var[i])"""
-   */  
-
-
-
-
-
 
 
 
