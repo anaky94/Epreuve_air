@@ -1,45 +1,36 @@
-/* """ Créez un programme qui supprime d’un tableau tous les éléments qui ne contiennent pas une autre chaîne de caractères.
+/* 
+Insertion dans un tableau trié
+
+Créez un programme qui ajoute à une liste d’entiers triée un nouvel entier tout en gardant la liste triée dans l’ordre croissant. Le dernier argument est l’élément à ajouter.
 
 Utilisez une fonction de ce genre (selon votre langage) :
-ma_fonction(array_de_strings, string) {
-	# votre algorithme
-	return (nouvel_array_de_strings)
+sorted_insert(array, new_element) {
+	# your algo
+	return (new_array)
 }
 Exemples d’utilisation :
-$> python exo.py “Michel” “Albert” “Thérèse” “Benoit” “t”
-Michel
-
-$> python exo.py “Michel” “Albert” “Thérèse” “Benoit” “a”
-Michel, Thérèse, Benoit
+$> ruby exo.rb 1 3 4 2
+1 2 3 4
+$> ruby exo.rb 10 20 30 40 50 60 70 90 33
+10 20 30 33 40 50 60 70 90
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
-"""
-
-#1 mettre les mots dans une variable
-#2 afficher les mots qui contiennent la lettre t
-#3 affiher les mot qui contiennent la lettre a
-#4 supremier les mots qui ne contiennent pas la lettre t
-
-chaine = "t"
-
-var=[   "Michel", "Albert" ,"Thérèse", "Benoit" ,"c", "beatrit", "toto" ]
-
-for element in var:
-        tranche_pas = element.find(chaine)
-        if tranche_pas != -1:
-            delete = var.remove("toto")
-            print(var
-
-
-"""
+*/
 
 
 
 
+function sorted_insert( tableau, new_element){
+   let indexIsertion = tableau.length 
+   
+    for (let i = 0; i < tableau.length; i++){
+        let valeurCourante = tableau[i]
 
+        // ici : refléchis à quand insérer new element 
+        if (  new_element < valeurCourante[i] ){
+            indexIsertion = i;
+            break
+        }
+    }        
 
-
-
-
-
-
+}

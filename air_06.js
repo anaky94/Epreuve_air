@@ -25,7 +25,7 @@ function filterTable( table,  stringResearch){
         let element = table[i]
         if (!element.toLowerCase().includes(stringResearch.toLowerCase())){
         
-                newArrayOfStrings.push(element)
+            newArrayOfStrings.push(element)
             
         }  
     }
