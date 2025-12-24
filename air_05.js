@@ -15,10 +15,8 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
  */
 
-//lobjecif est de fair une opération mathématique avec chaque entité d'une liste 
-//L'operation ce trouve dans le dernier élement en chaine de caractère 
 
-
+//Utilitises 
 function displayOfStrings() {
     let tableResult = []
     let list = []
@@ -85,6 +83,7 @@ function getDisplayOfStrings() {
     const list = args.slice(0, -1).map(Number)
 
     let tableResult = []
+    
     for (element of list){
         if (operation === "+"){
             tableResult.push (element +number)

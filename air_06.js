@@ -17,7 +17,7 @@ Michel, Thérèse, Benoit
 Afficher error et quitter le programme en cas de problèmes d’arguments.
  */
      
-
+//Utilitises 
 function filterTable( table,  stringResearch){
     let newArrayOfStrings = []
 

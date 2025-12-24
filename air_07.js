@@ -19,8 +19,8 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 
 
-
-function sorted_insert( tableau, new_element){
+//Utilities
+function sortedInsert( tableau, new_element){
    let indexIsertion = tableau.length 
 
     for (let i = 0; i < tableau.length; i++){
@@ -37,5 +37,54 @@ function sorted_insert( tableau, new_element){
     return debut.concat([new_element], fin)
 }
 
+//Parsing 
+function getArguments(){
+    const args = process.argv.slice(2)
+    return args
+}
 
-console.log(sorted_insert([10, 20, 40, 50], 25))
+//Gestion d'erreur 
+function isValidArguments (args){
+    if (args.length < 2 ) {
+        console.error("error")
+        return false
+    }
+    return true 
+
+}
+function checkTheValidNumber(args) {
+    for(let i=0; i < args.length - 1; i++ ){
+        const arg = args[i]
+        if (arg.trim() === "" || (isNaN(Number(arg)))){
+            console.error(`Erreur : ce n'est pas un nombre valide`);
+            console.info("Exemple : node script.js 4 6 12 ");
+            return true
+        }
+    }
+    return false
+} 
+
+//Resolution 
+function getSortedInsert (){
+    let args = getArguments()
+
+    if(!isValidArguments(args)) return
+    if(checkTheValidNumber(args)) return
+
+    //Extraction du dernier élément (celui à insérer) 
+    const  add = Number(args.pop())
+    //Conversion du rest en tableau de nombre
+    const sortedList = args.map(Number)
+
+    return (sortedInsert(sortedList, add).join(' '));
+
+}
+//Affichage 
+function display(){
+    let result = getSortedInsert()
+    if (result){
+        console.log(result)
+    }
+}
+
+display()
