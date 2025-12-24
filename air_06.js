@@ -44,7 +44,6 @@ function isValidArguments(args) {
     if (args.length < 2){
         console.error("Erreur")
     return false
-
     }
     return true
 }

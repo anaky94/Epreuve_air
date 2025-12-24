@@ -22,15 +22,20 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 function sorted_insert( tableau, new_element){
    let indexIsertion = tableau.length 
-   
+
     for (let i = 0; i < tableau.length; i++){
         let valeurCourante = tableau[i]
 
-        // ici : refléchis à quand insérer new element 
-        if (  new_element < valeurCourante[i] ){
+        if (new_element < valeurCourante){
             indexIsertion = i;
             break
         }
     }        
 
+    let debut = tableau.slice(0, indexIsertion)
+    let fin = tableau.slice (indexIsertion)
+    return debut.concat([new_element], fin)
 }
+
+
+console.log(sorted_insert([10, 20, 40, 50], 25))
