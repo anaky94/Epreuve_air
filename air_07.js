@@ -49,7 +49,7 @@ function isValidArguments (args){
         console.error("error")
         return false
     }
-    return true 
+    return true
 
 }
 function checkTheValidNumber(args) {
