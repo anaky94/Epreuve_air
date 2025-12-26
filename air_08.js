@@ -68,7 +68,7 @@ function getSortedFusion() {
 	if(!isValidArguments(args)) return
     if(checkTheValidNumber(args)) return
 
-	const sortedFusion = args.map(Number)	
+	
 }
 
 //Display
