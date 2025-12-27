@@ -62,16 +62,16 @@ function getSortedFusion(){
 	let args = getArguments()
 
 	if(!isValidArguments(args)) return
-    
-	const fusionIndex = args.indexOf("fusion")
 	
+	const fusionIndex = args.indexOf("fusion")
+
 	if (fusionIndex === -1){
 		return null
 	}
 
 	const array1 = args.slice(0, fusionIndex).map(Number)
 	const array2 = args.slice(fusionIndex + 1).map(Number)
-	
+
 	return sortedFusion(array1, array2).join(' ')
 }
 
