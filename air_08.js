@@ -16,7 +16,6 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 //Utilities
 function sortedFusion (array1, array2){
 	let result = []
-
 	let i = 0
 	let j = 0
 
@@ -29,11 +28,8 @@ function sortedFusion (array1, array2){
 			i++
 		}
 	}
-	return result
+	return result.sort((a,b) => a-b)
 }
-console.log(sortedFusion())
-
-
 //Parsing 
 function getArguments(){
     const args = process.argv.slice(2)
@@ -47,14 +43,14 @@ function isValidArguments (args){
         return false
     }
     return true
-
 }
-function checkTheValidNumber(args) {
-    for(let i = 0; i < args.length - 1; i++ ){
-        const arg = args[i]
-        if (arg.trim() === "" || (isNaN(Number(arg)))){
-            console.error(`Erreur : ce n'est pas un nombre valide`);
-            console.info("Exemple : node script.js 4 6 12 ");
+
+function checkTheValidNumber(args){
+    for (let i = 0; i < args.length; i++){
+		if (args[i] === "fusion") continue
+        const trimmed = args[i].trim();
+        if (!trimmed || isNaN(Number(trimmed))){
+            console.error(`Erreur`)
             return true
         }
     }
@@ -62,16 +58,31 @@ function checkTheValidNumber(args) {
 }
 
 //Resolution 
-function getSortedFusion() { 
+function getSortedFusion(){ 
 	let args = getArguments()
 
 	if(!isValidArguments(args)) return
-    if(checkTheValidNumber(args)) return
+    
+	const fusionIndex = args.indexOf("fusion")
+	
+	if (fusionIndex === -1){
+		return null
+	}
 
-	const sortedFusion = args.map(Number)	
+	const array1 = args.slice(0, fusionIndex).map(Number)
+	const array2 = args.slice(fusionIndex + 1).map(Number)
+	
+	return sortedFusion(array1, array2).join(' ')
 }
 
 //Display
+function display(){
+	let result = getSortedFusion()
+		if(result){
+			console.log(result)
+		}
+}
 
+display()
 
 

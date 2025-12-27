@@ -13,7 +13,6 @@ $> ruby exo.rb 10 20 30 fusion 15 25 35
 10 15 20 25 30 35
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
-
 */
 
 
