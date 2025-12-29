@@ -33,7 +33,7 @@ function filterTable( table,  stringResearch){
 }
 
 
-//parsing
+//Parsing
 function getArguments() {
     const args = process.argv.slice(2)
     return args 
@@ -51,7 +51,7 @@ function isValidArguments(args) {
 function rejectNumber(args) {
 	for (const elements of args){
 		if (!isNaN(Number(elements))){
-	      console.error("Erreur: pas de dnombre autorisés")
+	      console.error("Erreur: pas de nombre autorisés")
 	      return true
 	    }
 	}

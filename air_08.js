@@ -19,16 +19,25 @@ function sortedFusion (array1, array2){
 	let i = 0
 	let j = 0
 
-	while (i < array1.length || j < array2.length) {
-		if (i >= array1.length || (j < array2.length && array2[j] < array1[i])){
-			result.push(array2[j])
-			j++
-		}else {
+	while (i < array1.length && j < array2.length) {
+		if(array1[i] < array2[j] ){
 			result.push(array1[i])
 			i++
+		}else {
+			result.push(array2[j])
+			j++
 		}
 	}
-	return result.sort((a,b) => a-b)
+
+	while (i < array1.length) {
+		result.push(array1[i])
+		i++
+	}
+	while (j < array2.length){
+		result.push(array2[j])
+		j++
+	}
+	return result
 }
 //Parsing 
 function getArguments(){
