@@ -42,10 +42,9 @@ function getArguments() {
 //Gestion d'erreur 
 function isValidArguments(args) {
     if (args.length < 2){
-        console.error("Erreur")
-    return false
+    return args
     }
-    return true
+    return console.log("veuillez renseigner plus de 2 arguments")
 }
 
 function rejectNumber(args) {

@@ -12,20 +12,19 @@ Afficher error et quitter le programme en cas de problèmes d’arguments ou de 
 */
 
 //Utilitises
-function readFile(value){
+function readFile(monFichier){
 	const fs = require('fs')
-	const monFichier = value
 
-	try{
+	try {
 		const contenu = fs.readFileSync(monFichier,'utf8')
-		console.log(contenu)
+		return contenu
 		
-	}catch (erreur) {
+	} catch (erreur) {
 		console.error("error") 
+		return null 
 	}
 
 }
-
 
 //Parsing
 function getArguments() {
@@ -35,8 +34,8 @@ function getArguments() {
 
 //Gestion d'erreur
 function isValidArguments(args) {
-	if (args.length < 2){
-		console.error("Erreur")
+	if (args.length !== 1){
+		console.error("Error")
 		return false
 	}
 	return true
@@ -48,11 +47,17 @@ function getReadFile() {
 
 	if(!isValidArguments(args)) return 
 
-	let result = readFile(args)
-	return result
+	let contenu = readFile(args[0])
+	return contenu
 }
 
 // Affiche 
 function display () {
-	let reesult = get
+	let result = getReadFile()
+	if (result) {
+		console.log(result)
+	}
 }
+
+display();
+

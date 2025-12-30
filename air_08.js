@@ -79,6 +79,7 @@ function getSortedFusion(){
 	}
 
 	const array1 = args.slice(0, fusionIndex).map(Number)
+	
 	const array2 = args.slice(fusionIndex + 1).map(Number)
 
 	return sortedFusion(array1, array2).join(' ')
