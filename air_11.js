@@ -15,27 +15,25 @@ Afficher error et quitter le programme en cas de problèmes d’arguments
 */
 
 //Utilitises 
-/* 
-FONCTION afficherPyramide(caractere, nombreEtages):
-    
-    POUR chaque étage de 1 à nombreEtages:
+function displayPyramid(caractere, numberFloor) {
+    for( let i = 1; i <= numberFloor.length; i++ )
+    {
+        const  nombreEspaces   = numberFloor - i
+        const nombreCaracteres = (i * 2) - 1  
         
-        // Calculer les éléments de cette ligne
-        nombreEspaces = nombreEtages - étage
-        nombreCaracteres = (étage * 2) - 1
-        
-        // Construire la ligne
-        ligne = ""
-        
-        // Ajouter les espaces au début
-        RÉPÉTER nombreEspaces fois:
-            ligne = ligne + " "
-        
-        // Ajouter les caractères
-        RÉPÉTER nombreCaracteres fois:
-            ligne = ligne + caractere
-        
-        // Afficher la ligne
-        AFFICHER(ligne)
+        let ligne = ""
 
-*/
+        for (let j = 0; j < nombreEspaces; j++){
+            ligne += " "
+        }
+
+        for (let j = 0; j < nombreCaracteres; j++){
+            ligne += caractere
+        }
+        
+        console.log(ligne)
+    }
+
+}
+
+console.log(displayPyramid("o", 3))

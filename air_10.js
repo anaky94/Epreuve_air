@@ -18,7 +18,6 @@ function readFile(monFichier){
 	try {
 		const contenu = fs.readFileSync(monFichier,'utf8')
 		return contenu
-		
 	} catch (erreur) {
 		console.error("error") 
 		return null 
