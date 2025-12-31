@@ -50,24 +50,20 @@ function isValidArguments(args) {
 
 }
 
-function checkTheValidNumber(args) {
-    for(let i=0; i < args.length - 1; i++ ){
-        const arg = args[i]
-        if (arg.trim() === "" || (isNaN(Number(arg)))){
-            console.error(`Erreur : ce n'est pas un nombre valide`);
-            console.info("Exemple : node script.js 4 6 12 ");
-            return true
-        }
+const isValidNumber = (number) => {
+    if (!isNaN(number)) {
+        return Number(number) // True
+    } else {
+        return console.error("Ce script prend des nombres.") // False
     }
-    return false
-} 
+}
 
 //Resolution 
 function getDisplayOfStrings() {
-    let args = getArguments()
+    const args = isValidArguments(getArguments())
     
     if(!isValidArguments(args)) return
-    if (checkTheValidNumber(args)) return
+    if (!isValidNumber(args)) return
 
     const operation = args [args.length - 1]
 

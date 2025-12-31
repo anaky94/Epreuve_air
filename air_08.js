@@ -19,7 +19,7 @@ function sortedFusion (array1, array2){
 	let i = 0
 	let j = 0
 
-	while (i < array1.length && j < array2.length) {
+	for (; i < array1.length && j < array2.length;) {
 		if(array1[i] < array2[j] ){
 			result.push(array1[i])
 			i++
@@ -29,13 +29,12 @@ function sortedFusion (array1, array2){
 		}
 	}
 
-	while (i < array1.length) {
+	for (; i< array1.length; i++) {
 		result.push(array1[i])
-		i++
 	}
-	while (j < array2.length){
+	for (; j < array2.length; j++){
 		result.push(array2[j])
-		j++
+		
 	}
 	return result
 }
@@ -47,16 +46,15 @@ function getArguments(){
 
 //Gestion d'erreur 
 function isValidArguments (args){
-    if (args.length < 2 ) {
-        console.error("error")
-        return false
+    if (args.length >= 3 && args.includes("fusion")) {
+        return args
     }
-    return true
+	console.error("error")
+    return false
 }
 
 function checkTheValidNumber(args){
     for (let i = 0; i < args.length; i++){
-		if (args[i] === "fusion") continue
         const trimmed = args[i].trim();
         if (!trimmed || isNaN(Number(trimmed))){
             console.error(`Erreur`)
@@ -68,28 +66,28 @@ function checkTheValidNumber(args){
 
 //Resolution 
 function getSortedFusion(){ 
-	let args = getArguments()
+	const args = isValidArguments(getArguments())
+	if(!args) return 
 
-	if(!isValidArguments(args)) return
 	
 	const fusionIndex = args.indexOf("fusion")
 
-	if (fusionIndex === -1){
-		return null
-	}
-
 	const array1 = args.slice(0, fusionIndex).map(Number)
-	
 	const array2 = args.slice(fusionIndex + 1).map(Number)
+
+	if (!array1 || !array2){
+		console.error("error")
+		return
+	}
 
 	return sortedFusion(array1, array2).join(' ')
 }
 
 //Display
 function display(){
-	let result = getSortedFusion()
-		if(result){
-			console.log(result)
+	const result = getSortedFusion()
+	if(result){
+		console.log(result)
 		}
 }
 

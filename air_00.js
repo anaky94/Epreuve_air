@@ -16,9 +16,6 @@ Afficher error et quitter le programme en cas de problèmes d’arguments.
 
 */
 
-
-
-
 //Fonction Utilitaire 
 function splitTable(args) {
 	let tableResult = []
@@ -46,14 +43,14 @@ function splitTable(args) {
 
 //Gestion d'erreur 
 function isValidArguments(args) {
-	if (args.length <= 0) {
-		console.error("Ce script au minimum un arguments")
-		return false
+	if (args.length > 1) {
+		return arguments
+	} else {
+		return console.log("Ce script prend au moins 2 arguments en parametres.")
 	}
-	return true 
 }
 
-function rejectNumber(args) {
+function isValidNumber(args) {
 	for (const elements of args){
 		if (!isNaN(Number(elements))){
 	      console.error('erreur')
@@ -72,10 +69,10 @@ function getArguments() {
 
 //Résolution
 function getSplitable() {
-	let args = getArguments()
+	let args = isValidArguments(getArguments())
 
 	if (!isValidArguments(args)) return //arret si arguments invalide
-	if (!rejectNumber(args)) return //arret si nombre detecté
+	if (!isValidNumber(args)) return //arret si nombre detecté
 
 	const testArgument = args[0]
 	const separateur = args[1]

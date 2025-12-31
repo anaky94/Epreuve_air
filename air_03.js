@@ -45,11 +45,23 @@ function isValidArguments(args) {
     }
     return true
 }
+
+function isValidNumber (number){
+    if (!isNaN(number)) {
+        return Number(number) // True
+    } else {
+        return console.error("Ce script prend des nombres.") // False
+    }
+}
+
 //Resolution 
 function getSearchTruder() {
-    let args = getArguments()
+    const args = isValidArguments(getArguments())
 
     if (!isValidArguments(args)){
+        return
+    }
+    if (!isValidNumber(args)){
         return
     }
 

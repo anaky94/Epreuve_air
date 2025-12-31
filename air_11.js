@@ -15,8 +15,9 @@ Afficher error et quitter le programme en cas de problèmes d’arguments
 */
 
 //Utilitises 
+
 function displayPyramid(caractere, numberFloor) {
-    for( let i = 1; i <= numberFloor.length; i++ )
+    for( let i = 1; i <= numberFloor; i++ )
     {
         const  nombreEspaces   = numberFloor - i
         const nombreCaracteres = (i * 2) - 1  
@@ -36,4 +37,16 @@ function displayPyramid(caractere, numberFloor) {
 
 }
 
-console.log(displayPyramid("o", 3))
+//Parsing
+function getArguments() {
+	const args = process.argv.slice(2)
+	return args
+}
+// Gestion d'erreur 
+function isValidArguments(args) {
+	if (args.length > 1) {
+		return arguments
+	} else {
+		return console.log("Ce script prend au moins 2 arguments en parametres.")
+	}
+}
