@@ -53,21 +53,20 @@ function isValidArguments (args){
     return false
 }
 
-function checkTheValidNumber(args){
-    for (let i = 0; i < args.length; i++){
-        const trimmed = args[i].trim();
-        if (!trimmed || isNaN(Number(trimmed))){
-            console.error(`Erreur`)
-            return true
-        }
+const isValidNumber = (number) => {
+    if (!isNaN(number)) {
+        return Number(number) // True
+    } else {
+        return console.error("Ce script prend des nombres.") // False
     }
-    return false
 }
 
 //Resolution 
 function getSortedFusion(){ 
 	const args = isValidArguments(getArguments())
-	if(!args) return 
+	
+	 if(!isValidArguments(args)) return
+    if(!isValidNumber(args)) return
 
 	
 	const fusionIndex = args.indexOf("fusion")

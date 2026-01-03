@@ -1,20 +1,25 @@
 
-/* """
-Afficher un escalier constitué d’un caractère et d’un nombre d’étages donné en paramètre.
+//Le roi des tris 
+
+/* 
+Créez un programme qui trie une liste de nombres. Votre programme devra implémenter l’algorithme du tri rapide (QuickSort).
+
+Vous utiliserez une fonction de cette forme (selon votre langage) :
+my_quick_sort(array) {
+	# votre algorithme
+	return (new_array)
+}
+
 Exemples d’utilisation :
-$> ruby exo.rb O 5
-    O
-   OOO
-  OOOOO
- OOOOOOO
-OOOOOOOOO
+$> python exo.py 6 5 4 3 2 1
+1 2 3 4 5 6
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 
-"""
+Wikipedia vous présentera une belle description de cet algorithme de tri.
+*/
 
-print("Afficher un escalier constitué d’un caractère et d’un nombre d’étages donné en paramètre.")
-
-
-for i in range(0, 10):
-    print(" " * (10 - i) + "O" * i * 2) */
+//Utilitises 
+function my_quick_sort(array) {
+    
+}

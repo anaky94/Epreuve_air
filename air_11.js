@@ -14,6 +14,7 @@ Afficher error et quitter le programme en cas de problèmes d’arguments
 
 */
 
+
 //Utilitises 
 
 function displayPyramid(caractere, numberFloor) {
@@ -44,9 +45,31 @@ function getArguments() {
 }
 // Gestion d'erreur 
 function isValidArguments(args) {
-	if (args.length > 1) {
+	if (args.length === 2) {
 		return arguments
 	} else {
 		return console.log("Ce script prend au moins 2 arguments en parametres.")
 	}
 }
+
+function isValidNumber(value){
+    const trimmed = value.trim()
+    return (trimmed && !isNaN(Number(trimmed))) ? Number(trimmed) : false
+}
+
+// Resolution 
+function getPyramid() {
+    const args = isValidArguments((getArguments))
+    if (!args) return
+
+    const caractere    = args[0]
+    const  numberFloor = isValidNumber(args[1])
+
+    if (!numberFloor || numberFloor <= 0) {
+        console.error("error")
+        return
+    }
+
+    displayPyramid(caractere, numberFloor)
+} 
+
