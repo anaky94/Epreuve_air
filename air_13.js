@@ -17,34 +17,86 @@ Total success: (56/62)
 Bonus : trouvez le moyen d’utiliser du vert et du rouge pour rendre réussites et échecs plus visibles.
 */
 const {execSync} = require ('child_process')
-const fs = require ('fs')
+// const fs = require ('fs')
+const {readdirSync} = require("fs")
+const { extname } = require('path')
+const tests {require} ("/.tests.jsin")
+
 
 const VERT = '\x1b[32m'
 const ROUGE = '\x1b[31m' 
 const  RESET = '\x1b[0m'
 
 
-//Definir Les exercices
-const exercices = 
-[
-    {
-        name: "air00-sortedInsert",
-        file: "./air00.js",
-        tests: [
-            {args: ["1","3","4","2"], expected: "1 2 3 4"},
-            {args: ["10", "20", "30", "40", "50", "60", "70", "90", "33"], expected:"10 20 30 40 50 60 70 90"}
-        ]
-    },
-
-    {
-        name: "air01-sortedFusion",
-        file: "./air01.js",
-        tests: [
-            {args: ["10","20","30", "fusion", "15", "25", "35"], expected:"10 20 30 33 40 50 25 60 70 90"}
-        ]
-    },
+function getFilesRequire(){
+const getFilesRequired = [
+    "air00.js",
+    "air01.js",
+    "air02.js",
+    "air03.js",
+    "air04.js",
+    "air05.js",
+    "air06.js",
+    "air07.js",
+    "air08.js",
+    "air09.js",
+    "air10.js",
+    "air11.js",
+    "air12.js", 
 ]
+    return getFilesRequired
+}
 
+function getFilesWanted(){
+    const fileNames = readdirSync(__dirname)
+    const filesWanted = fileNames.filter((file) => extname(file) === ".js")
+    filesWanted.pop()
+    return filesWanted
+}
+
+function isValidFiles (filesRequired, filesWanted){
+    if (filesRequired.length !== filesWanted.length) {
+        console.error("lenombre de fichier n'est pas le même")
+        return 
+    }
+    for (const file of filesWanted) {
+        if(!filesRequired.includes(file)){
+            console.error("Fichier non requis")
+            return
+        }
+    }
+    return filesWanted 
+}
+
+function checkTest (stoutCleared, index, exercise, totalSucesss) {
+    if (stoutCleared === exercise.results[index]){
+        console.log(`${exercise.exercise} (${index+1}/${exercise.results.length}) :sucess`)
+        totalSucesss++
+    }else {
+        console.log($`{erxercise.exercise} (${index+1}/${exercise.results.length}) : failure`)
+    }
+    return totalSucesss
+}
+
+function executeTest (tests){
+    let totalSucesss = 0
+    let numberOftests = 0
+    for (const exercise of tests) {
+        for(let index = 0; index < exercise.entries.length; index++){
+            const entry = exercise.entries[index]
+            const exerciseName = exercise.exercise
+            
+        try {
+            const stdout = execSync (`node ${exerciseName} ${entry}`).toString()
+            
+        }
+        }
+
+        
+    }
+}
+
+/*
 function runtest(file, args, expected){
     try 
     {
@@ -64,9 +116,11 @@ function runtest(file, args, expected){
 
 }
 
+
 function runMetaTest() {
     let totaltests = 0
     let successCount = 0
+
     for (const exercise of exercices){
         console.log(`\ntesting ${exercise.name}:` )
 
@@ -93,7 +147,7 @@ function runMetaTest() {
 
 runMetaTest()
 
-
+*/
 
 
 
