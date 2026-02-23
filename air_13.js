@@ -17,7 +17,11 @@ Total success: (56/62)
 Bonus : trouvez le moyen d’utiliser du vert et du rouge pour rendre réussites et échecs plus visibles.
 */
 const {execSync} = require ('child_process')
-const fs = require ('fs')
+// const fs = require ('fs')
+const {readdirSync} = require("fs")
+const { extname } = require('path')
+const tests {require} ("/.tests.jsin")
+
 
 const VERT = '\x1b[32m'
 const ROUGE = '\x1b[31m' 
@@ -176,9 +180,11 @@ function runtest(file, args, expected){
 
 }
 
+
 function runMetaTest() {
     let totaltests = 0
     let successCount = 0
+
     for (const exercise of exercices){
         console.log(`\ntesting ${exercise.name}:` )
 
