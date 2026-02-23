@@ -12,12 +12,12 @@ Exemples d’utilisation :
 $> python exo.py “Crevette magique dans la mer des étoiles”
 	“la”
 Crevette magique dans 
- mer des étoiles
+mer des étoiles
 
 Afficher error et quitter le programme en cas de problèmes d’arguments.
 */
 
-// //Parsing
+//Parsing
 // function getArguments() {
 // 	const args = process.argv.slice(2)
 // 	return args

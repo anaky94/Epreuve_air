@@ -1,5 +1,5 @@
 
-/* """ Créez un programme qui supprime d’un tableau tous les éléments qui ne contiennent pas une autre chaîne de caractères.
+/* ""Créez un programme qui supprime d’un tableau tous les éléments qui ne contiennent pas une autre chaîne de caractères.
 
 Utilisez une fonction de ce genre (selon votre langage) :
 ma_fonction(array_de_strings, string) {
@@ -24,9 +24,7 @@ function filterTable( table,  stringResearch){
     for (let i = 0; i < table.length; i++){
         let element = table[i]
         if (!element.toLowerCase().includes(stringResearch.toLowerCase())){
-        
             newArrayOfStrings.push(element)
-            
         }  
     }
     return newArrayOfStrings
@@ -80,11 +78,3 @@ function display(){
 }
 
 display()
-
-
-
-
-
-
-
-
